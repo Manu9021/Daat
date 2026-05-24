@@ -1,518 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Cara</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CARA - Agent autonome pour les equipes</title>
+  <meta name="description" content="CARA aide les equipes a automatiser leurs recherches, emails, fichiers et workflows web dans un espace professionnel securise.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="status-banner" id="statusBanner"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="CARA accueil">
+      <span class="brand-mark" aria-hidden="true">C</span>
+      <span>CARA</span>
+    </a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#solution">Solution</a>
+      <a href="#security">Securite</a>
+      <a href="#plans">Abonnements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://cara.daatsystem.com">Acceder au compte</a>
+  </header>
 
-<div class="app" id="appShell">
-    <div class="overlay" id="overlay"></div>
-
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <div class="brand"><span class="brand-dot"></span> Cara</div>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Agent autonome pour operations modernes</p>
+        <h1>CARA transforme les demandes metier en actions concretes.</h1>
+        <p class="hero-lead">
+          Une interface unique pour rechercher, rediger, traiter des fichiers,
+          connecter les outils de travail et lancer des workflows assistes.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="https://cara.daatsystem.com">Se connecter</a>
+          <a class="secondary-btn" href="#solution">Decouvrir CARA</a>
         </div>
-        <div class="sidebar-actions">
-            <button class="new-chat-btn" onclick="newConversation()">
-                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Nouvelle conversation
-            </button>
+      </div>
+      <div class="product-preview" aria-label="Apercu de l'application CARA">
+        <div class="preview-topbar">
+          <span></span><span></span><span></span>
+          <strong>Nouvelle mission</strong>
         </div>
-        <div class="history-section" id="historyList">
-            <div class="history-label">Historique</div>
-        </div>
-        <div class="sidebar-footer">
-            <div class="account-panel">
-                <div class="account-summary" id="accountSummary">
-                    <div class="account-name" id="accountName">Visiteur</div>
-                    <div class="account-email" id="accountEmail">Connectez-vous pour discuter</div>
-                </div>
-                <div class="account-actions">
-                    <button class="account-action secondary" id="accountSwitchBtn" type="button" onclick="showAuthGate('login')">Connexion</button>
-                    <button class="account-action secondary" id="openAccountBtn" type="button" onclick="openAccountPage()" style="display:none">Mon compte</button>
-                    <button class="account-action" id="logoutBtn" type="button" onclick="logoutUser()" style="display:none">Deconnexion</button>
-                </div>
+        <div class="preview-body">
+          <aside class="preview-sidebar">
+            <div></div>
+            <div></div>
+            <div></div>
+          </aside>
+          <section class="preview-chat">
+            <div class="assistant-line wide"></div>
+            <div class="assistant-line"></div>
+            <div class="mission-card">
+              <p>Analyse de la demande</p>
+              <strong>Email, fichier et navigation web detectes</strong>
+              <div class="progress"><span></span></div>
             </div>
-            <div class="sidebar-meta">
-                <button class="theme-toggle" onclick="toggleTheme()">
-                    <span id="themeIcon">🌙</span> <span id="themeLabel">Sombre</span>
-                </button>
-                <span class="version-tag">v10.3</span>
-            </div>
+            <div class="user-bubble">Prepare le rapport et envoie-le a l'equipe.</div>
+          </section>
         </div>
-    </aside>
+      </div>
+    </section>
 
-    <div class="main">
-        <div class="topbar">
-            <button class="menu-btn" onclick="toggleSidebar()">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
-            <span class="topbar-title" id="topbarTitle">Nouvelle conversation</span>
-            <div class="topbar-right">
-                <div class="topbar-mission-status" id="missionStatus">
-                    <div class="spinner"></div>
-                    <span id="missionStatusText">Mission en cours...</span>
-                </div>
-                <span class="status-dot disconnected" id="statusDot" title="Deconnecte"></span>
-            </div>
+    <section class="metrics" aria-label="Indicateurs">
+      <div>
+        <strong>4</strong>
+        <span>domaines d'action</span>
+      </div>
+      <div>
+        <strong>24/7</strong>
+        <span>assistant disponible</span>
+      </div>
+      <div>
+        <strong>MFA</strong>
+        <span>comptes securises</span>
+      </div>
+      <div>
+        <strong>OAuth</strong>
+        <span>Google et Microsoft</span>
+      </div>
+    </section>
+
+    <section class="section" id="solution">
+      <div class="section-heading">
+        <p class="eyebrow">Solution</p>
+        <h2>Un espace de travail pour deleguer les taches repetitives.</h2>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <span>01</span>
+          <h3>Recherche et synthese</h3>
+          <p>Posez une question, demandez une veille ou comparez des informations sans changer d'outil.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Emails connectes</h3>
+          <p>CARA peut preparer des reponses, retrouver un contexte et assister les communications operationnelles.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Documents et fichiers</h3>
+          <p>Analysez des contenus, structurez les livrables et accedez a des workflows bureautiques guides.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Navigation web</h3>
+          <p>Sur les plans avances, CARA aide a piloter des actions web avec suivi et validation utilisateur.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split-section" id="security">
+      <div>
+        <p class="eyebrow">Confiance</p>
+        <h2>Concue pour les comptes professionnels.</h2>
+        <p>
+          Authentification par email, Google, Microsoft ou Apple, MFA par QR code,
+          sessions securisees et connexions externes revocables.
+        </p>
+      </div>
+      <div class="security-list">
+        <div><strong>01</strong><span>Double authentification avec application Authenticator.</span></div>
+        <div><strong>02</strong><span>OAuth pour connecter les outils sans stocker les mots de passe.</span></div>
+        <div><strong>03</strong><span>Abonnements configurables selon les capacites et limites d'usage.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="plans">
+      <div class="section-heading">
+        <p class="eyebrow">Abonnements</p>
+        <h2>Chaque equipe peut commencer simplement puis monter en puissance.</h2>
+      </div>
+      <div class="plans">
+        <article>
+          <p class="plan-label">Gratuit</p>
+          <h3>Decouverte</h3>
+          <p class="plan-price">0 EUR <span>/ mois</span></p>
+          <p>Pour tester CARA avec les fonctions essentielles.</p>
+          <ul class="plan-features">
+            <li>Demandes simples et assistance generale</li>
+            <li>Historique personnel limite</li>
+            <li>Connexion email, Google, Microsoft ou Apple</li>
+            <li>MFA par QR code</li>
+          </ul>
+          <a class="plan-link" href="https://cara.daatsystem.com">Commencer</a>
+        </article>
+        <article class="highlight-plan">
+          <p class="plan-label">Growth</p>
+          <h3>Usage quotidien</h3>
+          <p class="plan-price">29 EUR <span>/ mois</span></p>
+          <p>Pour les independants et petites equipes qui utilisent CARA tous les jours.</p>
+          <ul class="plan-features">
+            <li>Limites de demandes augmentees</li>
+            <li>Analyse de fichiers et documents</li>
+            <li>Emails Gmail et Outlook connectes</li>
+            <li>Modeles IA plus puissants selon configuration</li>
+          </ul>
+          <a class="plan-link" href="https://cara.daatsystem.com">Choisir Growth</a>
+        </article>
+        <article>
+          <p class="plan-label">Scale</p>
+          <h3>Workflows avances</h3>
+          <p class="plan-price">79 EUR <span>/ mois</span></p>
+          <p>Pour les equipes qui veulent automatiser des operations plus completes.</p>
+          <ul class="plan-features">
+            <li>Demandes mensuelles elevees</li>
+            <li>Navigation web assistee avec validation</li>
+            <li>Extractions API et workflows avances</li>
+            <li>Priorite d'execution et meilleurs quotas</li>
+          </ul>
+          <a class="plan-link" href="https://cara.daatsystem.com">Passer a Scale</a>
+        </article>
+        <article>
+          <p class="plan-label">Entreprise</p>
+          <h3>Sur mesure</h3>
+          <p class="plan-price">Sur devis</p>
+          <p>Pour adapter CARA aux besoins internes, aux roles et aux volumes de l'entreprise.</p>
+          <ul class="plan-features">
+            <li>Limites et modeles personnalisables</li>
+            <li>Accompagnement au deploiement</li>
+            <li>Parametrage securite et gouvernance</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <a class="plan-link" href="mailto:contact@daatsystem.com?subject=Demande%20abonnement%20Entreprise%20CARA">Nous contacter</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Contact</p>
+        <h2>Une question sur CARA ou un abonnement ?</h2>
+        <p>
+          Envoyez un message a l'equipe. Le formulaire ouvre votre application email
+          avec les informations renseignees.
+        </p>
+        <a class="email-link" href="mailto:contact@daatsystem.com">contact@daatsystem.com</a>
+        <div class="contact-actions">
+          <a class="primary-btn" href="https://cara.daatsystem.com">Acceder a mon compte</a>
+          <a class="secondary-btn" href="mailto:contact@daatsystem.com?subject=Contact%20CARA">Ecrire un email</a>
         </div>
+      </div>
+      <form class="contact-form" action="mailto:contact@daatsystem.com" method="post" enctype="text/plain">
+        <label>
+          <span>Nom</span>
+          <input type="text" name="Nom" autocomplete="name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="Email" autocomplete="email" required>
+        </label>
+        <label>
+          <span>Entreprise</span>
+          <input type="text" name="Entreprise" autocomplete="organization">
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="Message" rows="5" required></textarea>
+        </label>
+        <button class="primary-btn" type="submit">Envoyer la demande</button>
+      </form>
+    </section>
+  </main>
 
-        <div class="chat-scroll" id="chatScroll">
-            <div class="chat-container" id="chatContainer">
-                <div class="welcome" id="welcome">
-                    <h1>Bonjour, je suis Cara.</h1>
-                    <p>Votre copilote numerique pour rechercher, organiser vos fichiers, gerer vos emails et automatiser vos taches.</p>
-                    <div class="quick-actions">
-                        <button class="quick-action" onclick="quickSend('Meteo a Paris')">🌤 Meteo</button>
-                        <button class="quick-action" onclick="quickSend('Cours du Bitcoin')">📈 Bitcoin</button>
-                        <button class="quick-action" onclick="quickSend('Cours du CAC 40')">📊 Bourse</button>
-                        <button class="quick-action" onclick="quickSend('Verifie mes emails')">📧 Emails</button>
-                        <button class="quick-action" onclick="quickSend('Ou est la Tour Eiffel ?')">🗺 Carte</button>
-                        <button class="quick-action" onclick="quickSend('Liste des automatisations')">⚡ Automatisations</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="account-workspace hidden" id="accountWorkspace">
-            <div class="account-page">
-                <div class="account-hero">
-                    <div>
-                        <div class="account-page-eyebrow">Espace compte</div>
-                        <h2>Gerez votre compte votre securite et votre facturation</h2>
-                        <p>Retrouvez un resume de votre espace, modifiez vos informations et pilotez vos preferences d'authentification.</p>
-                    </div>
-                    <button class="account-page-close" type="button" onclick="closeAccountPage()">Retour au chat</button>
-                </div>
-
-                <div class="account-section-tabs">
-                    <button class="account-section-tab active" id="accountTab-summary" type="button" onclick="switchAccountSection('summary')">Resume</button>
-                    <button class="account-section-tab" id="accountTab-profile" type="button" onclick="switchAccountSection('profile')">Compte</button>
-                    <button class="account-section-tab" id="accountTab-security" type="button" onclick="switchAccountSection('security')">Authentification</button>
-                    <button class="account-section-tab" id="accountTab-connections" type="button" onclick="switchAccountSection('connections')">Connexions</button>
-                    <button class="account-section-tab" id="accountTab-billing" type="button" onclick="switchAccountSection('billing')">Facturation</button>
-                </div>
-
-                <div class="account-feedback" id="accountPageFeedback"></div>
-
-                <section class="account-section active" id="accountSection-summary">
-                    <div class="account-summary-grid">
-                        <article class="account-card account-card-highlight">
-                            <span class="account-card-label">Compte actif</span>
-                            <strong id="summaryFullName">Compte en attente</strong>
-                            <p id="summaryIdentity">Connectez-vous pour voir vos informations.</p>
-                        </article>
-                        <article class="account-card">
-                            <span class="account-card-label">Plan</span>
-                            <strong id="summaryPlan">Starter</strong>
-                            <p id="summaryBillingStatus">Essai en cours</p>
-                        </article>
-                        <article class="account-card">
-                            <span class="account-card-label">Securite</span>
-                            <strong id="summarySecurity">Mot de passe</strong>
-                            <p id="summarySecurityDetail">2FA desactivee</p>
-                        </article>
-                        <article class="account-card">
-                            <span class="account-card-label">Notifications</span>
-                            <strong id="summaryNotifications">Aucune preference</strong>
-                            <p id="summaryCompletion">Profil a completer</p>
-                        </article>
-                    </div>
-
-                    <div class="account-columns">
-                        <article class="account-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Vue d'ensemble</h3>
-                                    <p>Un resume clair de votre compte et des options activees.</p>
-                                </div>
-                            </div>
-                            <dl class="account-kv">
-                                <div><dt>Email</dt><dd id="summaryEmail">-</dd></div>
-                                <div><dt>Entreprise</dt><dd id="summaryCompany">-</dd></div>
-                                <div><dt>Telephone</dt><dd id="summaryPhone">-</dd></div>
-                                <div><dt>Poste</dt><dd id="summaryJobTitle">-</dd></div>
-                                <div><dt>Fuseau horaire</dt><dd id="summaryTimezone">-</dd></div>
-                                <div><dt>Moyen de paiement</dt><dd id="summaryPaymentMethod">-</dd></div>
-                            </dl>
-                        </article>
-
-                        <article class="account-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Actions rapides</h3>
-                                    <p>Accedez en un clic aux zones les plus utilisees.</p>
-                                </div>
-                            </div>
-                            <div class="account-quick-actions">
-                                <button class="account-quick-action" type="button" onclick="switchAccountSection('profile')">Modifier mes informations</button>
-                                <button class="account-quick-action" type="button" onclick="switchAccountSection('security')">Renforcer ma securite</button>
-                                <button class="account-quick-action" type="button" onclick="switchAccountSection('connections')">Connecter mes outils</button>
-                                <button class="account-quick-action" type="button" onclick="switchAccountSection('billing')">Mettre a jour la facturation</button>
-                            </div>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="account-section" id="accountSection-profile">
-                    <div class="account-columns">
-                        <article class="account-card account-form-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Informations du compte</h3>
-                                    <p>Modifiez votre profil principal et les details visibles dans l'application.</p>
-                                </div>
-                            </div>
-                            <form class="account-form-grid" id="accountProfileForm" onsubmit="saveAccountProfile(event)">
-                                <label class="auth-field">
-                                    <span>Nom complet</span>
-                                    <input type="text" id="accountFullName" autocomplete="name" placeholder="Votre nom">
-                                </label>
-                                <label class="auth-field">
-                                    <span>Entreprise</span>
-                                    <input type="text" id="accountCompany" autocomplete="organization" placeholder="Votre entreprise">
-                                </label>
-                                <label class="auth-field">
-                                    <span>Telephone</span>
-                                    <input type="tel" id="accountPhone" autocomplete="tel" placeholder="+33 6 00 00 00 00">
-                                </label>
-                                <label class="auth-field">
-                                    <span>Poste</span>
-                                    <input type="text" id="accountJobTitle" placeholder="CEO, SDR, Ops...">
-                                </label>
-                                <label class="auth-field auth-field-wide">
-                                    <span>Fuseau horaire</span>
-                                    <input type="text" id="accountTimezone" placeholder="Europe/Paris">
-                                </label>
-                                <label class="auth-field auth-field-wide">
-                                    <span>Bio</span>
-                                    <textarea id="accountBio" rows="4" placeholder="Decrivez votre activite, vos besoins ou votre equipe."></textarea>
-                                </label>
-                                <button class="auth-submit account-submit" id="accountProfileSubmit" type="submit">Enregistrer le compte</button>
-                            </form>
-                        </article>
-
-                        <article class="account-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Etat du profil</h3>
-                                    <p>Quelques indicateurs pour savoir si votre compte est complet.</p>
-                                </div>
-                            </div>
-                            <div class="account-progress">
-                                <div class="account-progress-bar">
-                                    <div class="account-progress-fill" id="profileCompletionBar"></div>
-                                </div>
-                                <div class="account-progress-text" id="profileCompletionText">0% complete</div>
-                            </div>
-                            <ul class="account-checklist" id="profileChecklist">
-                                <li>Ajoutez votre nom complet</li>
-                                <li>Precisez votre entreprise</li>
-                                <li>Renseignez un moyen de contact</li>
-                            </ul>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="account-section" id="accountSection-security">
-                    <div class="account-columns">
-                        <article class="account-card account-form-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Options d'authentification</h3>
-                                    <p>Activez ou desactivez les methodes que vous souhaitez proposer sur votre compte.</p>
-                                </div>
-                            </div>
-                            <form class="account-toggle-list" id="accountSecurityForm" onsubmit="saveAccountSecurity(event)">
-                                <label class="account-toggle">
-                                    <div>
-                                        <strong>Connexion par mot de passe</strong>
-                                        <span>Methode classique pour se connecter.</span>
-                                    </div>
-                                    <input type="checkbox" id="securityPasswordLogin">
-                                </label>
-                                <label class="account-toggle">
-                                    <div>
-                                        <strong>Lien magique</strong>
-                                        <span>Connexion rapide via un email de verification.</span>
-                                    </div>
-                                    <input type="checkbox" id="securityMagicLink">
-                                </label>
-                                <label class="account-toggle">
-                                    <div>
-                                        <strong>Double authentification (2FA)</strong>
-                                        <span>Ajoute une verification supplementaire a la connexion.</span>
-                                    </div>
-                                    <input type="checkbox" id="securityTwoFactor">
-                                </label>
-                                <label class="account-toggle">
-                                    <div>
-                                        <strong>Connexion Google</strong>
-                                        <span>Option sociale a afficher comme methode autorisee.</span>
-                                    </div>
-                                    <input type="checkbox" id="securityGoogleAuth">
-                                </label>
-                                <label class="account-toggle">
-                                    <div>
-                                        <strong>Connexion Microsoft</strong>
-                                        <span>Pratique pour les equipes B2B sous Microsoft 365.</span>
-                                    </div>
-                                    <input type="checkbox" id="securityMicrosoftAuth">
-                                </label>
-                                <label class="account-toggle">
-                                    <div>
-                                        <strong>Mises a jour produit</strong>
-                                        <span>Recevoir les nouveautes et changements importants.</span>
-                                    </div>
-                                    <input type="checkbox" id="securityProductUpdates">
-                                </label>
-                                <label class="account-toggle">
-                                    <div>
-                                        <strong>Emails marketing</strong>
-                                        <span>Recevoir des conseils, cas d'usage et annonces commerciales.</span>
-                                    </div>
-                                    <input type="checkbox" id="securityMarketingEmails">
-                                </label>
-                                <button class="auth-submit account-submit" id="accountSecuritySubmit" type="submit">Enregistrer les options</button>
-                            </form>
-                        </article>
-
-                        <article class="account-card account-form-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Changer le mot de passe</h3>
-                                    <p>Renouvelez votre mot de passe a tout moment.</p>
-                                </div>
-                            </div>
-                            <form class="account-form-grid" id="accountPasswordForm" onsubmit="saveAccountPassword(event)">
-                                <label class="auth-field auth-field-wide">
-                                    <span>Mot de passe actuel</span>
-                                    <input type="password" id="accountCurrentPassword" autocomplete="current-password" required>
-                                </label>
-                                <label class="auth-field auth-field-wide">
-                                    <span>Nouveau mot de passe</span>
-                                    <input type="password" id="accountNewPassword" autocomplete="new-password" minlength="8" required>
-                                </label>
-                                <button class="auth-submit account-submit" id="accountPasswordSubmit" type="submit">Mettre a jour le mot de passe</button>
-                            </form>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="account-section" id="accountSection-connections">
-                    <div class="account-columns">
-                        <article class="account-card account-form-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Connexions securisees</h3>
-                                    <p>Connectez vos comptes Google ou Microsoft sans jamais stocker leur mot de passe dans l'application.</p>
-                                </div>
-                            </div>
-                            <div class="account-connection-hero">
-                                <button class="auth-submit account-submit" id="connectGoogleBtn" type="button" onclick="connectOAuthProvider('google')">Connecter Google</button>
-                                <button class="auth-submit account-submit secondary-submit" id="connectMicrosoftBtn" type="button" onclick="connectOAuthProvider('microsoft')">Connecter Microsoft</button>
-                            </div>
-                            <p class="account-connection-copy">
-                                Les acces sont relies a votre espace entreprise, chiffres en base et revocables a tout moment.
-                            </p>
-                        </article>
-
-                        <article class="account-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Comptes connectes</h3>
-                                    <p>Visualisez les boites mail ou suites collaboratives deja autorisees.</p>
-                                </div>
-                            </div>
-                            <div class="account-connections-list" id="oauthConnectionsList">
-                                <div class="account-empty-state">Aucune connexion externe pour le moment.</div>
-                            </div>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="account-section" id="accountSection-billing">
-                    <div class="account-columns">
-                        <article class="account-card account-form-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Facturation</h3>
-                                    <p>Configurez le plan, le contact de facturation et les informations societes.</p>
-                                </div>
-                            </div>
-                            <form class="account-form-grid" id="accountBillingForm" onsubmit="saveAccountBilling(event)">
-                                <label class="auth-field">
-                                    <span>Plan</span>
-                                    <select id="billingPlan">
-                                        <option value="Starter">Starter</option>
-                                        <option value="Growth">Growth</option>
-                                        <option value="Scale">Scale</option>
-                                        <option value="Enterprise">Enterprise</option>
-                                    </select>
-                                </label>
-                                <label class="auth-field">
-                                    <span>Statut</span>
-                                    <select id="billingStatus">
-                                        <option value="trialing">Essai</option>
-                                        <option value="active">Actif</option>
-                                        <option value="past_due">Paiement en attente</option>
-                                        <option value="cancelled">Annule</option>
-                                    </select>
-                                </label>
-                                <label class="auth-field">
-                                    <span>Periodicite</span>
-                                    <select id="billingCycle">
-                                        <option value="monthly">Mensuelle</option>
-                                        <option value="yearly">Annuelle</option>
-                                    </select>
-                                </label>
-                                <label class="auth-field">
-                                    <span>Email de facturation</span>
-                                    <input type="email" id="billingEmail" autocomplete="email" placeholder="billing@entreprise.com">
-                                </label>
-                                <label class="auth-field">
-                                    <span>Societe de facturation</span>
-                                    <input type="text" id="billingCompany" placeholder="Nom legal">
-                                </label>
-                                <label class="auth-field">
-                                    <span>TVA / SIRET</span>
-                                    <input type="text" id="billingVat" placeholder="FRXX...">
-                                </label>
-                                <label class="auth-field auth-field-wide">
-                                    <span>Adresse de facturation</span>
-                                    <textarea id="billingAddress" rows="3" placeholder="Adresse complete"></textarea>
-                                </label>
-                                <label class="auth-field">
-                                    <span>Carte</span>
-                                    <input type="text" id="billingCardBrand" placeholder="Visa, Mastercard...">
-                                </label>
-                                <label class="auth-field">
-                                    <span>4 derniers chiffres</span>
-                                    <input type="text" id="billingCardLast4" inputmode="numeric" maxlength="4" placeholder="4242">
-                                </label>
-                                <button class="auth-submit account-submit" id="accountBillingSubmit" type="submit">Mettre a jour la facturation</button>
-                            </form>
-                        </article>
-
-                        <article class="account-card">
-                            <div class="account-card-header">
-                                <div>
-                                    <h3>Resume facture</h3>
-                                    <p>Vision rapide de votre abonnement et de votre moyen de paiement.</p>
-                                </div>
-                            </div>
-                            <div class="billing-overview">
-                                <div class="billing-pill" id="billingOverviewPlan">Starter</div>
-                                <div class="billing-overview-line">
-                                    <span>Statut</span>
-                                    <strong id="billingOverviewStatus">Essai</strong>
-                                </div>
-                                <div class="billing-overview-line">
-                                    <span>Cycle</span>
-                                    <strong id="billingOverviewCycle">Mensuel</strong>
-                                </div>
-                                <div class="billing-overview-line">
-                                    <span>Paiement</span>
-                                    <strong id="billingOverviewPayment">Visa •••• 4242</strong>
-                                </div>
-                                <div class="billing-overview-line">
-                                    <span>Contact</span>
-                                    <strong id="billingOverviewEmail">-</strong>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <div class="input-area">
-            <div id="pendingFiles" class="pending-files" style="display:none"></div>
-            <div class="input-box" id="inputBox">
-                <button class="icon-btn" onclick="fileInput.click()" title="Joindre un fichier">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
-                </button>
-                <textarea id="msgInput" placeholder="Decrivez votre mission..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-            </div>
-            <div class="disclaimer">Cara peut executer des actions reelles sur votre PC. Verifiez les resultats.</div>
-        </div>
-    </div>
-</div>
-
-<div class="dropzone-overlay" id="dropzoneOverlay">
-    <div class="drop-icon">📂</div>
-    <div class="drop-text">Deposez vos fichiers ici</div>
-    <div class="drop-hint">PDF, Word, Excel, Images, CSV - 10 Mo max</div>
-</div>
-
-<div class="auth-gate" id="authGate">
-    <div class="auth-card">
-        <div class="auth-eyebrow">Espace compte</div>
-        <h2>Creation de compte et authentification</h2>
-        <p class="auth-copy">Creez un compte pour acceder a votre espace et ouvrir une session securisee sur l'application.</p>
-
-        <div class="auth-tabs">
-            <button class="auth-tab active" id="loginTab" type="button" onclick="switchAuthMode('login')">Connexion</button>
-            <button class="auth-tab" id="registerTab" type="button" onclick="switchAuthMode('register')">Inscription</button>
-        </div>
-
-        <form class="auth-form" id="loginForm" onsubmit="submitLogin(event)">
-            <label class="auth-field">
-                <span>Email</span>
-                <input type="email" id="loginEmail" autocomplete="email" required>
-            </label>
-            <label class="auth-field">
-                <span>Mot de passe</span>
-                <input type="password" id="loginPassword" autocomplete="current-password" required>
-            </label>
-            <button class="auth-submit" id="loginSubmit" type="submit">Se connecter</button>
-        </form>
-
-        <form class="auth-form auth-form-hidden" id="registerForm" onsubmit="submitRegister(event)">
-            <label class="auth-field">
-                <span>Nom complet</span>
-                <input type="text" id="registerName" autocomplete="name" placeholder="Votre nom">
-            </label>
-            <label class="auth-field">
-                <span>Entreprise</span>
-                <input type="text" id="registerCompany" autocomplete="organization" placeholder="Optionnel">
-            </label>
-            <label class="auth-field">
-                <span>Email</span>
-                <input type="email" id="registerEmail" autocomplete="email" required>
-            </label>
-            <label class="auth-field">
-                <span>Mot de passe</span>
-                <input type="password" id="registerPassword" autocomplete="new-password" minlength="8" required>
-            </label>
-            <button class="auth-submit" id="registerSubmit" type="submit">Creer mon compte</button>
-        </form>
-
-        <div class="auth-feedback" id="authFeedback"></div>
-    </div>
-</div>
-
-<div style="display:none" aria-hidden="true">
-    <span>Ai-je répondu à votre demande ?</span>
-    <span>Ai-je rÃ©pondu Ã  votre demande ?</span>
-    <span>Oui</span>
-    <span>Non</span>
-    <span>Informations nécessaires pour terminer la mission</span>
-    <span>Continuer la mission</span>
-    <span>Fonctionnalite non disponible</span>
-    <span>Cette mission sera disponible dans une prochaine version.</span>
-    <span>data.ui_summary</span>
-</div>
-
-<input type="file" id="fileInput" style="display:none" multiple>
-<script src="script.js"></script>
+  <footer>
+    <span>CARA par Daat'System</span>
+    <span>Agent autonome, securite et productivite</span>
+  </footer>
 </body>
 </html>
